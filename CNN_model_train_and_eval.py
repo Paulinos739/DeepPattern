@@ -31,7 +31,7 @@ def create_classifier(n_layers=5, global_pooling=True):
 
     features = 32
     for n in range(n_layers):
-        # Covolutoion
+        # Convolution
         classifier.add(Conv2D(features, (3, 3), input_shape=(64, 64, 3), activation="relu"))
         # Step 2 - Pooling
         classifier.add(MaxPooling2D(pool_size = (2, 2)))
@@ -72,7 +72,7 @@ def create_classifier_2():
     classifier.add(MaxPooling2D(pool_size = (2, 2)))
 
     # Adding a second convolutional layer
-    classifier.add(Conv2D(32, (3, 3), activation = 'relu'))
+    classifier.add(Conv2D(64, (3, 3), activation = 'relu'))
     classifier.add(MaxPooling2D(pool_size = (2, 2)))
 
     # Step 3 - Flattening
@@ -118,10 +118,10 @@ def main():
 
     # start computation and train the model
     classifier.fit(train_ds,
-                             steps_per_epoch = (8000 / 32),
+                             steps_per_epoch = (8000/20),
                              epochs = 10,
                              validation_data = validation_ds,
-                             validation_steps = 1000,
+                             validation_steps = 1000/20,
                              )
 
 
@@ -147,8 +147,8 @@ def main():
     classifier.save(r"C:\Users\PAUL\PycharmProjects\FM_SoSo20_Master\saved_models\circle_cube_trained_CNN.h5",
                     overwrite=True
                     )
-    print("Saved trained model to disk")
-    print("Program finished")
+    print("trained model succesfully saved to disk")
+    print("training finished")
 
 
 
