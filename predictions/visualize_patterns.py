@@ -16,8 +16,8 @@ import numpy as np
 # First create a list to put in the label predictions, for 2D Numpy array with 0 and 1 int
 label_list_Numpy_2D = []
 
-# Set the test-image os path here!!!
-test_image_path = r'C:\Users\PAUL\PycharmProjects\FM_SoSo20_Master\test.png'
+# path to test image at first
+test_image_path = 'test.png'
 
 # load test img and convert to Numpy array, set floor plan to test here!
 test_image = image.load_img(test_image_path,
@@ -29,7 +29,7 @@ test_image = np.expand_dims(test_image, axis=0)
 # Model to distinguish rectangular-shaped architecture
 def classifier_Rechteck():
     classifier = load_model(
-        r'C:\Users\PAUL\PycharmProjects\FM_SoSo20_Master\trained_classifiers_weights\Recheck_100_trained_CNN.h5',
+        'trained model as h5 file',
         compile=True)
 
     result = classifier.predict_classes(test_image)
@@ -40,7 +40,7 @@ def classifier_Rechteck():
 # Model to distinguish composite-rectangular shapes
 def classifier_L():
     classifier = load_model(
-        r'C:\Users\PAUL\PycharmProjects\FM_SoSo20_Master\trained_classifiers_weights\L_100_trained_CNN.h5',
+        'trained model as h5 file',
         compile=True)
 
     result = classifier.predict_classes(test_image)
@@ -51,7 +51,7 @@ def classifier_L():
 # Model to distinguish linear-shaped architecture
 def classifier_linear():
     classifier = load_model(
-        r'C:\Users\PAUL\PycharmProjects\FM_SoSo20_Master\trained_classifiers_weights\linear_100_trained_CNN.h5',
+        'trained model as h5 file',
         compile=True)
 
     result = classifier.predict_classes(test_image)
@@ -62,7 +62,7 @@ def classifier_linear():
 # Model to distinguish circular-shaped architecture
 def classifier_Kreis():
     classifier = load_model(
-        r'C:\Users\PAUL\PycharmProjects\FM_SoSo20_Master\trained_classifiers_weights\Circle_100_trained_CNN.h5',
+        'trained model as h5 file',
         compile=True)
 
     result = classifier.predict_classes(test_image)
@@ -73,7 +73,7 @@ def classifier_Kreis():
 # Model to distinguish polygon-shaped architecture
 def classifier_Polygon():
     classifier = load_model(
-        r'C:\Users\PAUL\PycharmProjects\FM_SoSo20_Master\trained_classifiers_weights\Polygon_200_trained_CNN.h5',
+        'trained model as h5 file',
         compile=True)
 
     result = classifier.predict_classes(test_image)
@@ -84,7 +84,7 @@ def classifier_Polygon():
 # Model to distinguish organically-shaped architecture
 def classifier_organisch():
     classifier = load_model(
-        r'C:\Users\PAUL\PycharmProjects\FM_SoSo20_Master\trained_classifiers_weights\organisch_100_trained_CNN.h5',
+        'trained model as h5 file',
         compile=True)
 
     result = classifier.predict_classes(test_image)
@@ -95,7 +95,7 @@ def classifier_organisch():
 # Model to distinguish if the architecture has an Atrium or not
 def classifier_Hof():
     classifier = load_model(
-        r'C:\Users\PAUL\PycharmProjects\FM_SoSo20_Master\trained_classifiers_weights\Hof_200_trained_CNN.h5'
+        'trained model as h5 file'
         , compile=True)
 
     result = classifier.predict_classes(test_image)
@@ -106,7 +106,7 @@ def classifier_Hof():
 # Model to distinguish if the building has a column grid
 def classifier_Stuetzenraster():
     classifier = load_model(
-        r'C:\Users\PAUL\PycharmProjects\FM_SoSo20_Master\trained_classifiers_weights\Stuetzenraster_100_trained_CNN.h5',
+        'trained model as h5 file',
         compile=True)
 
     test_image_Column = image.load_img(test_image_path,
@@ -122,7 +122,7 @@ def classifier_Stuetzenraster():
 # Model to distinguish if the plan have staircases
 def classifier_Treppe():
     classifier = load_model(
-        r'C:\Users\PAUL\PycharmProjects\FM_SoSo20_Master\trained_classifiers_weights\Treppe_100_trained_CNN.h5',
+        'trained model as h5 file',
         compile=True)
 
     test_image_Treppe = image.load_img(test_image_path,
@@ -174,7 +174,7 @@ def Visualizer():
 
         draw = ImageDraw.Draw(new_image)
         font = ImageFont.truetype(
-            r"C:\Users\PAUL\PycharmProjects\FM_SoSo20_Master\predictions\fonts\BankGothic_Regular.ttf",
+            "font file as ttf or so",
             19,
             encoding="unic")
 
