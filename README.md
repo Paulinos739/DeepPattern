@@ -1,6 +1,6 @@
 # DeepPattern
 
-Independent Student Research @TU Darmstadt
+Independent Research Project @TU Darmstadt
 
 # Introducing Convolutional Neural Networks for Architectural Pattern Recognition
 
