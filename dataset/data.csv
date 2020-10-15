@@ -1,6 +1,6 @@
-images,class A,class B,class C
-1.jpg, 1, 0, 0
-2.jpg, 0, 1, 0
-3.jpg, 0, 0, 1
-4.jpg, 1, 1, 0
-5.jpg, 1, 0, 1
+Sample,class A,class B,class C,class D,class E,class F,class G,class H,class I
+1.png, 1, 0, 0, 1, 0, 1, 1, 0, 0
+2.png, 0, 1, 0, 0, 0, 0, 0, 0, 1
+3.png, 0, 0, 1, 1, 1, 1, 1, 0, 0
+4.png, 1, 0, 0, 1, 0, 0, 0, 1, 0
+5.png, 1, 0, 1, 0, 0, 1, 1, 0, 1
