@@ -3,7 +3,7 @@
 'Modified July 2020 for Forschungsmodul SoSe 20 at the DDU at TU Darmstadt'
 '@author: Paul Steggemann (github@ Paulinos739)'
 
-'This binary classification model predicts the presence of a label (Arhitectural Patterns) in grayscale Floor Plan Images. '
+'This multi-label classification model learns Architectural Patterns in grayscale Floor Plan Images. '
 
 ""
 
