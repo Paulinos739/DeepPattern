@@ -122,11 +122,11 @@ def main():
 
     if __name__ == '__main__':
         train_data, validation_data = csv_dataset(
-            csv_file=r"C:\Users\PAUL\Documents\Unterlagen\Arch...+\TUD\Architektur\M.Sc\Mod_Dat\Forschungsmodul\DeepPattern\04_Daten\04_Dataset_Public-Buildings\FM_dataset_labels_plus_kaggle.csv",
-            image_directory=r"C:\Users\PAUL\Documents\Unterlagen\Arch...+\TUD\Architektur\M.Sc\Mod_Dat\Forschungsmodul\DeepPattern\04_Daten\04_Dataset_Public-Buildings\Dataset_floor_plans_kaggle",
+            csv_file= "CSV-file path here which contains all the labels assigned to the sample names",
+            image_directory= "path to dataset folder, where all images are in",
             batch_size=16,
             image_column_name="Sample",
-            class_column_names=["Kreis"],  # Set the label to fit to, "Kreis" in this case
+            class_column_names=["Circle"],  # Set the label to fit to, "Circle" in this case - could be any of all teh label
             validation_split=0.2,
         )
 
