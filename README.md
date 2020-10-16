@@ -42,6 +42,7 @@ It uses the [Keras](https://keras.io/) Library for the Neural Networks and runs 
 - Tensorflow
 - Keras
 - Pandas
+- matplotlib
 - PIL (Pillow)
 
 ### Queries
