@@ -21,7 +21,7 @@ Finally, this paper also presents a simple tool which visualizes the automated p
 
 The framework developed here can be used to automatically classify floor plans acoording to its patterns. Use the tool, put a floor plan image in and test it out on nine different architectural patterns, which gets then visualized in the way demonstrated below. It is part of an ongoing investigation how it is possible to integrate Machine Learning into digital yet human-centered architectural design processes.
 
-![predict_11](https://user-images.githubusercontent.com/65179419/96238135-6e9d8b00-0f9e-11eb-8f6e-0edec565875f.png)
+![predict_10](https://user-images.githubusercontent.com/65179419/96246034-5af72200-0fa8-11eb-91fd-1d69e6e8df23.png)
 
 
 ### Browse architectural history
