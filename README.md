@@ -1,6 +1,6 @@
 # DeepPattern
 
-# Introducing Convolutional Neural Networks for Architectural Pattern Recognition
+## Introducing Convolutional Neural Networks for Architectural Pattern Recognition
 
 Independent Research Project @TU Darmstadt
 
