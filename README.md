@@ -53,11 +53,6 @@ Feel free to play with the layers and esspeccially with the input size. This sho
 ![DNN_diagramm](https://user-images.githubusercontent.com/65179419/96249838-18d0df00-0fae-11eb-8679-edd5449765a4.png)
 
 
-### Queries
-
-For questions or further ideas, just email me at paul.arch@web.de
-
-
 ### References
 
 Aggarwal C. : Neural Networks and Deep Learning, Springer 2018
@@ -73,3 +68,7 @@ Wiki as Pattern Language. Cunningham, Mehaffy, 2013
 Aerial Futures, Certain Measures 2019:
 https://certainmeasures.com/aerosphere.html
 
+
+### Queries
+
+For questions or further ideas, just email me at paul.arch@web.de
