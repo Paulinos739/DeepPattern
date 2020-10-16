@@ -1,7 +1,11 @@
 # DeepPattern
 
 ## Introducing Convolutional Neural Networks for Architectural Pattern Recognition
-![Floor_PLan_Grid_highRes](https://user-images.githubusercontent.com/65179419/96243449-0dc58100-0fa5-11eb-9ab1-b1160f38fbf8.png)
+
+![Cover_Design_A5_machine_view_2page](https://user-images.githubusercontent.com/65179419/96243957-ba9ffe00-0fa5-11eb-8f41-482d4b52a472.png)
+
+
+
 
 Independent Research Project Spring 2020 @[Digital Design Unit](https://ddu-research.com/) at TU Darmstadt
 
