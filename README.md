@@ -44,6 +44,15 @@ You can use binary classification and train each model only on one label/pattern
 - Matplotlib
 - PIL (Pillow)
 
+
+## Model architecture
+
+For the Neural Network architecture I used two Convolutional Layers. For Pooling I used Global Average Pooling 2D because the architectural features occur not only in small regions of the image, but on a broader scale, e.g. the shape of a building occupies the whole image.
+Feel free to play withe layers and esspeccially with the input size. This should have a positive impact on the feature learning.
+
+![DNN_diagramm](https://user-images.githubusercontent.com/65179419/96249838-18d0df00-0fae-11eb-8679-edd5449765a4.png)
+
+
 ### Queries
 
 For questions or further ideas, just email me at paul.arch@web.de
