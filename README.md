@@ -47,8 +47,8 @@ You can use binary classification and train each model only on one label/pattern
 
 ## Model architecture
 
-For the Neural Network architecture I used two Convolutional Layers. For Pooling I used Global Average Pooling 2D because the architectural features occur not only in small regions of the image, but on a broader scale, e.g. the shape of a building occupies the whole image.
-Feel free to play withe layers and esspeccially with the input size. This should have a positive impact on the feature learning.
+For the Neural Network architecture I always the architecture illustrated below and rearranged it slightly depending on which label have been trained. It uses two Convolutional Layers with 2x2 Pooling each. For Pooling I used Global Average Pooling 2D, because architectural features in floor plans occur not only in small regions of the image, but on a broader scale, e.g. the shape of a building occupies the whole image.
+Feel free to play with the layers and esspeccially with the input size. This should have a positive impact on the feature learning.
 
 ![DNN_diagramm](https://user-images.githubusercontent.com/65179419/96249838-18d0df00-0fae-11eb-8679-edd5449765a4.png)
 
@@ -56,3 +56,20 @@ Feel free to play withe layers and esspeccially with the input size. This should
 ### Queries
 
 For questions or further ideas, just email me at paul.arch@web.de
+
+
+### References
+
+Aggarwal C. : Neural Networks and Deep Learning, Springer 2018
+
+Alexander, C. (1977) A Pattern Language. Towns, Buildings, Constructions. New York Oxford University Press.
+
+Chaillou, S. Suggestive CAD, Assisting Design through Machine Learning. 2018
+
+Dodge, Samuel & Xu, Jiu & Stenger, Bjorn. (2017). Parsing floor plan images. 358-361. 10.23919/MVA.2017.7986875.
+
+Wiki as Pattern Language. Cunningham, Mehaffy, 2013
+
+Aerial Futures, Certain Measures 2019:
+https://certainmeasures.com/aerosphere.html
+
