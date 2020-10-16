@@ -12,4 +12,18 @@ The conducted experiment proved that the algorithms are capable of understanding
 Finally, this paper also presents a simple tool which visualizes the automated prediction of patterns on floor plans through the trained Machine Vision Bots.
 
 
+### Retrieving Architectural Patterns with CNN
+
+The framework developed here can be used to automatically classify floor plans acoording to its patterns. Use the tool, put a test-image in and test it out on nine different architectural patterns, which gets then visualized in the way demonstrated below.
+
 ![predict_11](https://user-images.githubusercontent.com/65179419/96238135-6e9d8b00-0f9e-11eb-8f6e-0edec565875f.png)
+
+
+### Browse architectural history
+
+![Suggestive Architecture_new](https://user-images.githubusercontent.com/65179419/96238321-a4427400-0f9e-11eb-9824-5b456f9cab71.png)
+
+
+### How to set up
+
+Depencies needed: Tensorflow and Keras. 
