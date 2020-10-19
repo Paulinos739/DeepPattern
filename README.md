@@ -7,7 +7,7 @@
 
 
 
-Independent Research Project @[Digital Design Unit](https://ddu-research.com/) at TU Darmstadt
+Independent Research Project @[Digital Design Unit](https://ddu-research.com/) | TU Darmstadt
 
 
 ### Abstract
