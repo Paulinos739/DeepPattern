@@ -23,6 +23,8 @@ The framework developed here can be used to automatically classify floor plans a
 
 ![Pattern_Predict_ale_gr](https://user-images.githubusercontent.com/65179419/96432407-2502a980-1205-11eb-83d4-2490b10477f9.gif)
 
+<img src="https://user-images.githubusercontent.com/65179419/96432407-2502a980-1205-11eb-83d4-2490b10477f9.gif" width="820" height="600"/>
+
 
 
 ### Browse architectural history
