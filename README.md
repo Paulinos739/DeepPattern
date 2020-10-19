@@ -24,6 +24,8 @@ The framework developed here can be used to automatically classify floor plans a
 <img src="https://user-images.githubusercontent.com/65179419/96464408-11b50580-1228-11eb-928e-1501e616333d.gif" width="860" height="500"/>
 
 
+
+
 ### Browse architectural history
 
 ![Suggestive Architecture_new](https://user-images.githubusercontent.com/65179419/96238321-a4427400-0f9e-11eb-9824-5b456f9cab71.png)
