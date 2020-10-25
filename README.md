@@ -55,6 +55,13 @@ Feel free to play with the layers and esspeccially with the input size. This sho
 ![DNN_diagramm](https://user-images.githubusercontent.com/65179419/96249838-18d0df00-0fae-11eb-8679-edd5449765a4.png)
 
 
+### Concept video to illustrate results
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=b9f7d2NJ6pQ" target="_blank">
+ <img src="http://img.youtube.com/vi/b9f7d2NJ6pQ/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" />
+</a>
+
+
 ### References
 
 Aggarwal C. : Neural Networks and Deep Learning, Springer 2018
