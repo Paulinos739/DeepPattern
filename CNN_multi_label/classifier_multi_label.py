@@ -48,7 +48,7 @@ def create_classifier():
     classifier.add(Dense(activation="relu", units=512))
     classifier.add(Dense(activation="relu", units=256))
     classifier.add(Dense(activation="relu", units=128))
-    classifier.add(Dense(activation="sigmoid", units=9))
+    classifier.add(Dense(activation="softmax", units=9))
 
     # Compiling the CNN
     classifier.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
@@ -116,13 +116,6 @@ def main():
 
         return train_generator, validation_generator
 
-    # Visualize the preprocessed data
-    def visualize(dataset, n: int):
-        from matplotlib import pyplot as plt
-        for input_data, outputs in itertools.islice(dataset, n):
-            plt.imshow(input_data[0, :, :, :])
-            print(outputs)
-            plt.show()
 
     if __name__ == '__main__':
         train_data, validation_data = csv_dataset(
@@ -133,8 +126,7 @@ def main():
             class_column_names=["Kreis","L","Rechteck","linear","Polygon", "organisch", "Hof", "Treppe", "Stuetzenraster"],  # Set all your labels/classes from csv-file here
         )
 
-        # visualize(train_data, 3)
-
+        
         # start computation and train the model
         classifier = create_classifier() 
         history = classifier.fit(x=train_data,
@@ -176,7 +168,7 @@ def main():
                 classifier.save("trained_classifier.h5",
                     overwrite=True, include_optimizer=True
                 )
-                print("fitted model successfully saved to disk")
+                print("Fitted model successfully saved to disk")
             else:
                 print("model was not saved to disk")
 
