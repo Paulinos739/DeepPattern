@@ -121,7 +121,7 @@ def main():
         )
         
         # start computation and train the model
-        classifier = create_classifier_Kreis()  # set which CNN model is used here!
+        classifier = create_classifier_circle()  # set which CNN model is used here!
         history = classifier.fit(x=train_data,
                                  steps_per_epoch=None,
                                  epochs=100,
