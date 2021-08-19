@@ -18,7 +18,7 @@ from keras.layers import Dense
 
 # Initializing the CNN
 
-def create_classifier_Rechteck():
+def create_classifier_rectangle():
 
     # CNN model partly borrowed from @author: pranavjain
     classifier = Sequential()
@@ -123,7 +123,7 @@ def main():
         )
 
         # start computation and train the model
-        classifier = create_classifier_Rechteck()  # set which CNN model is used here! could be another function
+        classifier = create_classifier_rectangle()  # set which CNN model is used here! could be another function
         history = classifier.fit(x=train_data,
                                  steps_per_epoch=None,
                                  epochs=100,
