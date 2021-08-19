@@ -16,7 +16,6 @@ from keras.layers import Dense, Dropout, BatchNormalization
 
 
 # Initializing the CNN
-
 def create_classifier():
     # CNN model partly borrowed from @author: pranavjain
     classifier = Sequential()
@@ -45,7 +44,6 @@ def create_classifier():
     classifier.add(GlobalAveragePooling2D())
 
     # Step 4 - Full connection
-    classifier.add(Dense(activation="relu", units=512))
     classifier.add(Dense(activation="relu", units=256))
     classifier.add(Dense(activation="relu", units=128))
     classifier.add(Dense(activation="softmax", units=9))
@@ -59,13 +57,10 @@ def create_classifier():
     return classifier
 
 
-# Data preprocessing with one directory(with test and validation img), plus a Csv file containing binary labels
-
+# Data preprocessing with one directory(with test and validation img)
 def main():
-    import itertools
     import os
     from typing import Union, List
-
     import pandas as pd
 
     # only defined for semantic distinction, really and will be str in most cases
@@ -86,7 +81,6 @@ def main():
             vertical_flip=True,
             width_shift_range=0.2,
             zoom_range=0.1,
-            shear_range=0.1,
             validation_split=validation_split,
         )
 
@@ -116,21 +110,20 @@ def main():
 
         return train_generator, validation_generator
 
-
     if __name__ == '__main__':
         train_data, validation_data = csv_dataset(
-            csv_file= "set path to CSV-file which contains the label of samples",
-            image_directory= "set the path to folder where all images are located",
-            batch_size=16,
-            image_column_name="Sample"  #Column containing the image names is called Sample in this case (see Example)
-            class_column_names=["Kreis","L","Rechteck","linear","Polygon", "organisch", "Hof", "Treppe", "Stuetzenraster"],  # Set all your labels/classes from csv-file here
+            csv_file="set path to CSV-file which contains the label of samples",
+            image_directory="set the path to folder where all images are located",
+            batch_size=50,
+            image_column_name="Sample",  # Column containing the image names
+            class_column_names=["Kreis", "L", "Rechteck", "linear", "Polygon", "organisch", "Hof", "Treppe",
+                                "Stuetzenraster"]
         )
 
-        
         # start computation and train the model
-        classifier = create_classifier() 
+        classifier = create_classifier()
         history = classifier.fit(x=train_data,
-                                 steps_per_epoch=None, # max is number of samples/ batch-size
+                                 steps_per_epoch=None,  # max is number of samples/ batch-size
                                  epochs=100,
                                  validation_data=validation_data,
                                  validation_steps=None,  # max is number of samples/ batch-size
@@ -166,11 +159,11 @@ def main():
         def save_classifier(save_h5=True):
             if save_h5:
                 classifier.save("trained_classifier.h5",
-                    overwrite=True, include_optimizer=True
-                )
-                print("Fitted model successfully saved to disk")
+                                overwrite=True, include_optimizer=True
+                                )
+                print("Model successfully saved to disk")
             else:
-                print("model was not saved to disk")
+                print("Model was not saved to disk")
 
         # Training history
         print(history.history.keys())
@@ -180,6 +173,5 @@ def main():
         save_classifier()
 
 
-# Finally run program
 if __name__ == '__main__':
     main()

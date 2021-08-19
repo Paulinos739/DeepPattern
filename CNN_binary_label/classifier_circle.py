@@ -15,7 +15,6 @@ from keras.layers import Dense, GaussianDropout, BatchNormalization
 
 
 # Initializing the CNN
-
 def create_classifier_circle():
     # CNN model heavenly borrowed from @author: pranavjain
     # Initialising the CNN
