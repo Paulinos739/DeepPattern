@@ -24,6 +24,11 @@ The framework developed here can be used to automatically classify floor plans a
 <img src="https://user-images.githubusercontent.com/65179419/96464408-11b50580-1228-11eb-928e-1501e616333d.gif" width="860" height="500"/>
 
 
+### Concept video which illustrates the project´s results
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=b9f7d2NJ6pQ" target="_blank">
+ <img src="http://img.youtube.com/vi/b9f7d2NJ6pQ/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" />
+</a>
 
 
 ### Browse architectural history
@@ -53,13 +58,6 @@ For the Neural Network architecture I always used the architecture illustrated b
 Feel free to play with the layers and esspeccially with the input size. This should have a positive impact on the feature learning.
 
 ![DNN_diagramm](https://user-images.githubusercontent.com/65179419/96249838-18d0df00-0fae-11eb-8679-edd5449765a4.png)
-
-
-### Concept video which illustrates the project´s results
-
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=b9f7d2NJ6pQ" target="_blank">
- <img src="http://img.youtube.com/vi/b9f7d2NJ6pQ/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" />
-</a>
 
 
 ### References
