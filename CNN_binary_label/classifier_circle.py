@@ -16,7 +16,7 @@ from keras.layers import Dense, GaussianDropout, BatchNormalization
 
 # Initializing the CNN
 
-def create_classifier_Kreis():
+def create_classifier_circle():
     # CNN model heavenly borrowed from @author: pranavjain
     # Initialising the CNN
     classifier = Sequential()
@@ -44,8 +44,6 @@ def create_classifier_Kreis():
     classifier.add(GlobalAveragePooling2D())
 
     # Step 4 - Full connection
-    classifier.add(Dense(activation="relu", units=512))
-    classifier.add(Dense(activation="relu", units=256))
     classifier.add(Dense(activation="relu", units=128))
     classifier.add(Dense(activation="sigmoid", units=1))
 
@@ -61,7 +59,6 @@ def main():
     import itertools
     import os
     from typing import Union, List
-
     import pandas as pd
 
     # only defined for semantic distinction, really and will be str in most cases
@@ -113,24 +110,15 @@ def main():
 
         return train_generator, validation_generator
 
-    def visualize(dataset, n: int):
-        from matplotlib import pyplot as plt
-        for input_data, outputs in itertools.islice(dataset, n):
-            plt.imshow(input_data[0, :, :, :])
-            print(outputs)
-            plt.show()
-
     if __name__ == '__main__':
         train_data, validation_data = csv_dataset(
-            csv_file= "CSV-file path here which contains all the labels assigned to the sample names",
-            image_directory= "path to dataset folder, where all images are in",
-            batch_size=16,
+            csv_file='dataset/data.csv',
+            image_directory='dataset',
+            batch_size=50,
             image_column_name="Sample",
             class_column_names=["Circle"],  # Set the label to fit to, "Circle" in this case - could be any of all teh label
             validation_split=0.2,
         )
-
-        visualize(train_data, 2)
         
         # start computation and train the model
         classifier = create_classifier_Kreis()  # set which CNN model is used here!

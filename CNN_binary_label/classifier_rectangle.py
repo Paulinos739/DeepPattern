@@ -43,7 +43,6 @@ def create_classifier_Rechteck():
     classifier.add(GlobalAveragePooling2D())
 
     # Step 4 - Full connection
-    classifier.add(Dense(activation="relu", units=256))
     classifier.add(Dense(activation="relu", units=128))
     classifier.add(Dense(activation="sigmoid", units=1))
 
@@ -113,25 +112,15 @@ def main():
 
         return train_generator, validation_generator
 
-    # Visualize the preprocessed data
-    def visualize(dataset, n: int):
-        from matplotlib import pyplot as plt
-        for input_data, outputs in itertools.islice(dataset, n):
-            plt.imshow(input_data[0, :, :, :])
-            print(outputs)
-            plt.show()
-
     if __name__ == '__main__':
         train_data, validation_data = csv_dataset(
-            csv_file="path to csv-file containing all labels and sample names",
-            image_directory="set the path here which contains all the images in a folder",
-            batch_size=32,
+            csv_file="dataset/data.csv",
+            image_directory="dataset/floor_plan_images",
+            batch_size=50,
             image_column_name="Sample",
             class_column_names=["Rechteck"],  # Set the label to fit to, Rechteck in this case
             validation_split=0.2,
         )
-
-        visualize(train_data, 2)
 
         # start computation and train the model
         classifier = create_classifier_Rechteck()  # set which CNN model is used here! could be another function
