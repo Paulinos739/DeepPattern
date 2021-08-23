@@ -13,13 +13,13 @@ from keras.preprocessing import image
 from typing import Tuple
 import numpy as np
 
-# First create a list to put in the label predictions, for 2D Numpy array with 0 and 1 int
+# Create a list to put in the label predictions
 label_list_Numpy_2D = []
 
-# path to test image at first
-test_image_path = 'test.png'
+# path to test image at first!
+test_image_path = 'predictions/test.png'
 
-# load test img and convert to Numpy array, set floor plan to test here!
+# load test img and convert to Numpy array
 test_image = image.load_img(test_image_path,
                             target_size=(64, 64), color_mode="rgb")
 test_image = image.img_to_array(test_image)
@@ -27,23 +27,23 @@ test_image = np.expand_dims(test_image, axis=0)
 
 
 # Model to distinguish rectangular-shaped architecture
-def classifier_Rechteck():
+def classifier_rectangle():
     classifier = load_model(
         'trained model as h5 file',
         compile=True)
 
-    result = classifier.predict_classes(test_image)
+    result = classifier.predict(test_image)
     label_list_Numpy_2D.append(result)
     return classifier
 
 
 # Model to distinguish composite-rectangular shapes
-def classifier_L():
+def classifier_longitudinal():
     classifier = load_model(
         'trained model as h5 file',
         compile=True)
 
-    result = classifier.predict_classes(test_image)
+    result = classifier.predict(test_image)
     label_list_Numpy_2D.append(result)
     return classifier
 
@@ -54,57 +54,57 @@ def classifier_linear():
         'trained model as h5 file',
         compile=True)
 
-    result = classifier.predict_classes(test_image)
+    result = classifier.predict(test_image)
     label_list_Numpy_2D.append(result)
     return classifier
 
 
 # Model to distinguish circular-shaped architecture
-def classifier_Kreis():
+def classifier_circle():
     classifier = load_model(
         'trained model as h5 file',
         compile=True)
 
-    result = classifier.predict_classes(test_image)
+    result = classifier.predict(test_image)
     label_list_Numpy_2D.append(result)
     return classifier
 
 
 # Model to distinguish polygon-shaped architecture
-def classifier_Polygon():
+def classifier_polygon():
     classifier = load_model(
         'trained model as h5 file',
         compile=True)
 
-    result = classifier.predict_classes(test_image)
+    result = classifier.predict(test_image)
     label_list_Numpy_2D.append(result)
     return classifier
 
 
 # Model to distinguish organically-shaped architecture
-def classifier_organisch():
+def classifier_organic():
     classifier = load_model(
         'trained model as h5 file',
         compile=True)
 
-    result = classifier.predict_classes(test_image)
+    result = classifier.predict(test_image)
     label_list_Numpy_2D.append(result)
     return classifier
 
 
 # Model to distinguish if the architecture has an Atrium or not
-def classifier_Hof():
+def classifier_atrium():
     classifier = load_model(
         'trained model as h5 file'
         , compile=True)
 
-    result = classifier.predict_classes(test_image)
+    result = classifier.predict(test_image)
     label_list_Numpy_2D.append(result)
     return classifier
 
 
 # Model to distinguish if the building has a column grid
-def classifier_Stuetzenraster():
+def classifier_column_grid():
     classifier = load_model(
         'trained model as h5 file',
         compile=True)
@@ -113,14 +113,13 @@ def classifier_Stuetzenraster():
                                        target_size=(128, 128, 1), color_mode="grayscale")
     test_image_Column = image.img_to_array(test_image_Column)
     test_image_Column = np.expand_dims(test_image_Column, axis=0)
-    result = classifier.predict_classes(test_image_Column)
+    result = classifier.predict(test_image_Column)
     label_list_Numpy_2D.append(result)
-
     return classifier
 
 
 # Model to distinguish if the plan have staircases
-def classifier_Treppe():
+def classifier_staircase():
     classifier = load_model(
         'trained model as h5 file',
         compile=True)
@@ -129,28 +128,26 @@ def classifier_Treppe():
                                        target_size=(64, 64, 1), color_mode="grayscale")
     test_image_Treppe = image.img_to_array(test_image_Treppe)
     test_image_Treppe = np.expand_dims(test_image_Treppe, axis=0)
-    result = classifier.predict_classes(test_image_Treppe)
+    result = classifier.predict(test_image_Treppe)
     label_list_Numpy_2D.append(result)
-
     return classifier
 
 
-# Then set up the main program to visualize results
 def Visualizer():
     # Call the predictions
-    classifier_Rechteck()
-    classifier_L()
+    classifier_rectangle()
+    classifier_longitudinal()
     classifier_linear()
 
-    classifier_Kreis()
-    classifier_Polygon()
-    classifier_organisch()
+    classifier_circle()
+    classifier_polygon()
+    classifier_organic()
 
-    classifier_Hof()
-    classifier_Stuetzenraster()
-    classifier_Treppe()
+    classifier_atrium()
+    classifier_column_grid()
+    classifier_staircase()
 
-    # Convert a 2D Numpy Array to a Python list to be able parse it
+    # Convert a 2D Numpy Array to a Python list to parse it
     from numpy import ndarray
     label_list = np.array(label_list_Numpy_2D)
     list(label_list_Numpy_2D)
@@ -159,8 +156,9 @@ def Visualizer():
     print("Printing a python list of estimated patterns...")
     print(label_list)
 
-    # define the visuals here
-    def add_legend_to_image(image_path: test_image_path, feature_vector: Tuple[int, int, int, int, int, int, int, int, int]):
+    # create the visualization
+    def add_legend_to_image(image_path: test_image_path,
+                            feature_vector: Tuple[int, int, int, int, int, int, int, int, int]):
 
         from PIL import Image
         from PIL import ImageFont
@@ -174,7 +172,7 @@ def Visualizer():
 
         draw = ImageDraw.Draw(new_image)
         font = ImageFont.truetype(
-            "font file as ttf or so",
+            "your favourite typeface as .ttf or equivalent",
             19,
             encoding="unic")
 
@@ -212,10 +210,10 @@ def Visualizer():
         else:
             draw.text(xy=(10, 610), text="Did not find any pattern", fill="black")
 
-        new_image.show()  # or/and
-        #new_image.save('predict_19.png')
+        new_image.show()
+        new_image.save('predicted_1.png')
 
-    # load the again image for displaying
+    # load the image again for display
     add_legend_to_image(image_path=test_image_path, feature_vector=label_list)
 
 
