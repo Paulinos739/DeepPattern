@@ -5,3 +5,4 @@ numpy==1.12.1
 
 pillow == 8.0.0
 matplotlib == 3.3.2
+tensorboard == 2.6.0
