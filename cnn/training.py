@@ -74,6 +74,7 @@ def main():
     from models import multi_class_classifier
     from training_utilities import training_callbacks, model_performance_plotting, save_classifier
 
+    # Set model architecture
     classifier = binary_classifier(input_dim=(64, 64, 3), feature_detectors=32, size_feature_detectors=(4, 4),
                                    learning_rate=initial_learning_rate)
     history = classifier.fit(x=train_data,
